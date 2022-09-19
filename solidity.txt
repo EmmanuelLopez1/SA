@@ -1,0 +1,57 @@
+//VARIABLES GLOBALES.
+°por defecto las variables definidas en un contrato solo se pueden acceder dentro de este.
+°Block: Trae informacion sobre el bloque.
+°Msg: Informacion sobre la llamada que se hace sobre el contrato.
+°Tx: Informacion sobre la transaccion.
+
+//PROPIEDADES MAS USADAS DE LAS VARIABLES GLOBALES.
+° block.gaslimit: muestra cual es el limite de gas que permite ejecutar el bloque actual.
+° msg.data: devuelve toda la informacion enviada en la llamada del contrato.
+° msg.sender: direccion de quien realiza la llamada al contrato.
+° msg.value: el valor de ether enviado en la llamada del contrato.
+° tx.gasprice: cuanto cuesta en gas la transaccion actual.
+
+//FUNCIONES
+VISIBILIDAD:
+°private:solo se pueden llamar dentro del contrato.
+°public:pueden ser llamadas desde dentro o fuera del contrato.
+
+KEYWORDS:
+°payable: se usa en una funcion cuando se necesita enviar ether a una direccion en blockchain.
+°view:Solo pueden leer variables de estado o estado global pero no pueden modificarlas.
+°pure: No puede modificar ni leer variables de estado o estado global.
+
+//DATA LOCATION.
+Storage:Este tipo de variables se guarda en la blockchain, es de tipo persistente.
+Memory:No persistente, solo se puede usar el valor mientras se llama una funcion y se hacen calculos con ella. Se puede modificar mientras se esta usando dentro de la funcion.
+Calldata: No persintente, se almacena solo mientras se esta usando, no puede ser modificada. Si el parametro de una funcion no se va a modificar se recomienda almacenarlo en calldata 
+ya que hara que se reduzca el gas necesario para ejecutar la funcion. 
+
+Las variables globales se almacenan en storage.
+Los parametros de una funcion se almacenan en Memory.
+
+Unicos tipos a los que se le puede asignar un almacenamiento distinto:
+STRING
+ARRAY
+STRUCT 	
+MAPPING
+
+//MODIFIERS FUNCTIONS
+Las modifier function sirve para evitar ciertos comportamientos o comprobar valores antes de ejecutar una funcion.
+
+//EVENTOS:
+Pueden conectar lo que pasa dentro de la blockchain con el exterior.
+A travez de un protocolo otras aplicaciones se pueden suscribir a los eventos y saber que esta pasando dentro de nuestro contrato.
+
+Se usan para:
+° registrar cambios que se hicieron.
+° dar feedback de un proyecto.
+
+//ASERCIONES (MANEJO DE ERRORES)
+°todos los cambios realizados en el contrato en esa llamada o cualquier llamada secundaria se deshacen si se produce un error.
+
+assert: cuando es falsa consume todo el gas restante y revierte los cambios realizados.
+require: tambien revierte todos los cambios realizados pero reembolsa todas las tarifas de gas restante que ofrecimos pagar.
+
+
+

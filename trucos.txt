@@ -1,0 +1,2 @@
+onclick con template literal:
+- onclick='send_data_backend(\`https://${server}/member-detail\`, ${JSON.stringify(element)})'

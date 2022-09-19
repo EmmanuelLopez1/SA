@@ -1,0 +1,22 @@
+server.js:
+- recibe las peticiones http.
+- comprobar que las peticiones son correctas.
+- configurar toda la informacion importante del servidor, como base de datos o cabeceras.
+
+routes.js:
+- llama al componente adecuado dependiendo a donde se dirige la peticion.
+
+network.js:
+-Se gestionan las rutas, los endpoints e informacion del protocolo http.
+
+controller.js:
+- almacena la logica de nuestro componente de mensajes.
+- todo lo que sea crear el mensaje, agregar informacion, modificar el mensaje,
+hacer comprobaciones, llamar otros componentes, se hace aqui.
+
+store.js:
+- se encarga de gestionar la base de datos.
+- dice donde y como se guarda la informacion.
+
+response.js:
+- se encarga de gestionar las respuestas de nuestra aplicaion.
